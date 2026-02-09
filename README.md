@@ -1,6 +1,6 @@
-# claude-org-stats
+# Claude Org Stats
 
-A GitHub Action that scans repositories in your GitHub organization (or profile) and generates visual ASCII bar charts showing Claude Code adoption statistics. Inspired by [waka-readme](https://github.com/athul/waka-readme).
+A GitHub Action that scans repositories in your GitHub organization (or profile) and generates visual ASCII bar charts showing Claude Code adoption statistics. Great for organizations that are looking to drive Claude Code adoption and want a first-line visibility into where it is being used. Inspired by [waka-readme](https://github.com/athul/waka-readme).
 
 ## Example Output
 
