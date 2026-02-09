@@ -25,6 +25,17 @@ claude-code-action      2 repos
 claude-code (ref)       2 repos
 ```
 
+<details>
+<summary>Per-repo breakdown</summary>
+
+| Repo | CLAUDE.md | .claude/ | MCP | Skills | Actions | Hooks | Agents | Memory |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| api-service | ✅ | ✅ | ✅ | ✅ | ✅ |  |  |  |
+| frontend-app | ✅ | ✅ |  |  |  |  |  |  |
+| infra-tools | ✅ |  |  |  |  |  |  |  |
+
+</details>
+
 ## Setup
 
 ### 1. Add section markers to your README
