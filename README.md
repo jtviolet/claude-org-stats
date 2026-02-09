@@ -13,12 +13,12 @@ Has Skills              2 repos   ░░░░░░░░░░░░░░░�
 Has Claude Actions      2 repos   ░░░░░░░░░░░░░░░░░░░░░░░░░   0.82 %
 
 ⚡ Top Skills (of 2 repos)
-oncall-triage           1 repos
-dedupe                  1 repos
 commit-push-pr          1 repos
-rebase                  1 repos
+dedupe                  1 repos
+oncall-triage           1 repos
 devops                  1 repos
 pr                      1 repos
+rebase                  1 repos
 
 🤖 Top GitHub Actions (of 2 repos)
 claude-code-action      2 repos
@@ -30,9 +30,9 @@ claude-code (ref)       2 repos
 
 | Repo | CLAUDE.md | .claude/ | MCP | Skills | Actions | Hooks | Agents | Memory |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| api-service | ✅ | ✅ | ✅ | ✅ | ✅ |  |  |  |
-| frontend-app | ✅ | ✅ |  |  |  |  |  |  |
-| infra-tools | ✅ |  |  |  |  |  |  |  |
+| my-api |  | ✅ |  | ✅ | ✅ |  |  |  |
+| my-app | ✅ | ✅ |  |  |  |  |  |  |
+| my-infra | ✅ |  |  |  |  |  |  |  |
 
 </details>
 
@@ -63,11 +63,12 @@ jobs:
   update-stats:
     runs-on: ubuntu-latest
     steps:
-      - uses: your-org/claude-org-stats@main
+      - uses: netwrix/claude-org-stats@main
         with:
           GH_TOKEN: ${{ secrets.ORG_READ_TOKEN }}
           ORG_NAME: your-org
           REPOSITORY: ${{ github.repository }}
+          SHOW_SECTIONS: "adoption,mcp,skills,actions,hooks,agents,details"
 ```
 
 ### 3. Create a GitHub token
