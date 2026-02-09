@@ -167,7 +167,7 @@ class TestRenderStatsDetailedOutput:
         result = render_stats(stats, config)
 
         # Check header row
-        assert "| Repo | CLAUDE.md | .claude/ | MCP | Commands | Actions | Hooks | Agents | Memory |" in result
+        assert "| Repo | CLAUDE.md | .claude/ | MCP | Skills | Actions | Hooks | Agents | Memory |" in result
 
     def test_detail_table_only_shows_repos_with_features(self):
         """Repos with no features should not appear in detail table."""
@@ -250,7 +250,7 @@ class TestRenderStatsDetailedOutput:
         # Check all sections appear
         assert "Claude Code Adoption" in result
         assert "Top MCP Servers" in result
-        assert "Top Custom Commands" in result
+        assert "Top Skills" in result
         assert "Claude GitHub Actions" in result
         assert "Hook Types" in result
         assert "Per-repo breakdown" in result

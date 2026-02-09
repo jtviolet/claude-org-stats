@@ -24,12 +24,20 @@ def detect_claude_dir(tree_paths: set[str], features: RepoFeatures) -> None:
 
 
 def detect_custom_commands(tree_paths: set[str], features: RepoFeatures) -> None:
-    """Detect custom commands in .claude/commands/ directory."""
-    prefix = ".claude/commands/"
+    """Detect skills in .claude/commands/ and .claude/skills/ directories."""
+    commands_prefix = ".claude/commands/"
+    skills_prefix = ".claude/skills/"
     for path in tree_paths:
-        if path.startswith(prefix) and path != prefix:
+        if path.startswith(commands_prefix) and path != commands_prefix:
             name = PurePosixPath(path).stem
-            features.custom_commands.append(name)
+            if name not in features.custom_commands:
+                features.custom_commands.append(name)
+        elif path.startswith(skills_prefix) and path != skills_prefix:
+            # Skills use directory-based structure: .claude/skills/<name>/SKILL.md
+            parts = path[len(skills_prefix):].split("/")
+            name = parts[0]
+            if name not in features.custom_commands:
+                features.custom_commands.append(name)
     if features.custom_commands:
         features.has_custom_commands = True
 

@@ -46,7 +46,7 @@ def _render_adoption(stats: OrgStats, config: Config, show_bar: bool = True) -> 
         ("Has CLAUDE.md", stats.claude_md_count),
         ("Has .claude/ Dir", stats.claude_dir_count),
         ("Has MCP Servers", stats.mcp_servers_count),
-        ("Has Custom Commands", stats.custom_commands_count),
+        ("Has Skills", stats.custom_commands_count),
         ("Has Claude Actions", stats.claude_actions_count),
         ("Has Hooks", stats.hooks_count),
         ("Has Agents", stats.agents_count),
@@ -78,7 +78,7 @@ def _render_details(stats: OrgStats, _config: Config) -> list[str]:
     if not active_repos:
         return []
 
-    headers = ["Repo", "CLAUDE.md", ".claude/", "MCP", "Commands", "Actions", "Hooks", "Agents", "Memory"]
+    headers = ["Repo", "CLAUDE.md", ".claude/", "MCP", "Skills", "Actions", "Hooks", "Agents", "Memory"]
     lines = [
         "\n<details>",
         "<summary>Per-repo breakdown</summary>",
@@ -121,7 +121,7 @@ _CHART_SECTIONS = {
         show_bar,
     ),
     "skills": lambda stats, config, show_bar: _render_ranked(
-        f"⚡ Top Custom Commands (of {stats.custom_commands_count} repos)",
+        f"⚡ Top Skills (of {stats.custom_commands_count} repos)",
         stats.custom_command_counter,
         stats.custom_commands_count,
         config,

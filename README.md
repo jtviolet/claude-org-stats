@@ -10,7 +10,7 @@ A GitHub Action that scans repositories in your GitHub organization (or profile)
 Has CLAUDE.md         15 repos   ████████████░░░░░░░░░░░░░  48.39 %
 Has .claude/ Dir      12 repos   ██████████░░░░░░░░░░░░░░░  38.71 %
 Has MCP Servers       12 repos   ██████████░░░░░░░░░░░░░░░  38.71 %
-Has Custom Commands    8 repos   ██████░░░░░░░░░░░░░░░░░░░  25.81 %
+Has Skills             8 repos   ██████░░░░░░░░░░░░░░░░░░░  25.81 %
 Has Claude Actions     6 repos   █████░░░░░░░░░░░░░░░░░░░░  19.35 %
 Has Hooks              4 repos   ███░░░░░░░░░░░░░░░░░░░░░░  12.90 %
 
@@ -67,7 +67,7 @@ For each repository in the organization:
 | **CLAUDE.md** | `CLAUDE.md` files at root or nested in directories |
 | **.claude/ directory** | Presence of `.claude/` configuration directory |
 | **MCP servers** | Server names from `.mcp.json` and `.claude/settings.json` |
-| **Custom commands** | Files in `.claude/commands/` directory |
+| **Skills** | Files in `.claude/commands/` and `.claude/skills/` directories |
 | **Claude GitHub Actions** | References to Claude actions in `.github/workflows/*.yml` |
 | **Hooks** | Hook definitions in `.claude/settings.json` |
 | **Agents** | Agent files in `.claude/agents/` directory |
@@ -97,7 +97,7 @@ For each repository in the organization:
 
 - `adoption` - Overview bar chart of all feature adoption rates
 - `mcp` - Ranked list of most common MCP servers
-- `skills` - Ranked list of custom commands
+- `skills` - Ranked list of skills (from `.claude/commands/` and `.claude/skills/`)
 - `actions` - Ranked list of Claude GitHub Actions
 - `hooks` - Ranked list of hook types
 - `details` - Per-repo table with checkmarks

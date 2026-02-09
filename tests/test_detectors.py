@@ -54,6 +54,22 @@ class TestTreeDetectors:
         assert features.has_custom_commands is True
         assert sorted(features.custom_commands) == ["review", "test"]
 
+    def test_detect_skills_directory(self):
+        features = RepoFeatures(name="test")
+        detect_custom_commands({".claude/skills/review/SKILL.md", ".claude/skills/deploy/SKILL.md"}, features)
+        assert features.has_custom_commands is True
+        assert sorted(features.custom_commands) == ["deploy", "review"]
+
+    def test_detect_skills_and_commands_combined(self):
+        features = RepoFeatures(name="test")
+        detect_custom_commands({
+            ".claude/commands/review.md",
+            ".claude/skills/review/SKILL.md",  # duplicate name
+            ".claude/skills/deploy/SKILL.md",
+        }, features)
+        assert features.has_custom_commands is True
+        assert sorted(features.custom_commands) == ["deploy", "review"]
+
     def test_detect_custom_commands_empty(self):
         features = RepoFeatures(name="test")
         detect_custom_commands({"src/main.py"}, features)
