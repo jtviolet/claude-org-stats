@@ -59,15 +59,19 @@ def update_readme(config: Config, rendered: str) -> None:
 
     # Commit the update
     committer = InputGitAuthor(config.committer_name, config.committer_email)
-    repo.update_file(
-        path=config.target_path,
-        message=config.commit_message,
-        content=new_content,
-        sha=readme_file.sha,
-        branch=branch,
-        committer=committer,
-    )
-    print(f"Updated {config.target_path} on {branch}.")
+    try:
+        repo.update_file(
+            path=config.target_path,
+            message=config.commit_message,
+            content=new_content,
+            sha=readme_file.sha,
+            branch=branch,
+            committer=committer,
+        )
+        print(f"Updated {config.target_path} on {branch}.")
+    except GithubException as e:
+        print(f"Error committing update: {e}")
+        sys.exit(1)
 
 
 def main() -> None:
