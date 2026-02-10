@@ -5,24 +5,31 @@ A GitHub Action that scans repositories in your GitHub organization (or profile)
 ## Example Output
 
 ```
-📊 Claude Code Adoption (245 repos scanned)
+📊 Claude Code Adoption (100 repos scanned)
 
-Has CLAUDE.md          31 repos   ███░░░░░░░░░░░░░░░░░░░░░░  12.65 %
-Has .claude/ Dir       13 repos   █░░░░░░░░░░░░░░░░░░░░░░░░   5.31 %
-Has Skills              2 repos   ░░░░░░░░░░░░░░░░░░░░░░░░░   0.82 %
-Has GitHub Actions      2 repos   ░░░░░░░░░░░░░░░░░░░░░░░░░   0.82 %
+Has CLAUDE.md          25 repos   ██████░░░░░░░░░░░░░░░░░░░  25.00 %
+Has .claude/ Dir       18 repos   ████░░░░░░░░░░░░░░░░░░░░░  18.00 %
+Has Skills              8 repos   ██░░░░░░░░░░░░░░░░░░░░░░░   8.00 %
+Has Agents              5 repos   █░░░░░░░░░░░░░░░░░░░░░░░░   5.00 %
+Has Hooks               4 repos   █░░░░░░░░░░░░░░░░░░░░░░░░   4.00 %
+Has GitHub Actions      6 repos   █░░░░░░░░░░░░░░░░░░░░░░░░   6.00 %
 
-⚡ Top Skills (of 2 repos)
-dedupe                  1 repos
-oncall-triage           1 repos
-commit-push-pr          1 repos
-rebase                  1 repos
-pr                      1 repos
-devops                  1 repos
+⚡ Top Skills (of 8 repos)
+review                  5 repos
+commit                  3 repos
+deploy                  2 repos
 
-🤖 Top GitHub Actions (of 2 repos)
-claude-code-action      2 repos
-claude-code (ref)       2 repos
+🕵️ Top Agents (of 5 repos)
+code-reviewer           3 repos
+test-writer             2 repos
+
+🪝 Top Hooks (of 4 repos)
+PreToolUse              3 repos
+PostToolUse             2 repos
+
+🤖 Top GitHub Actions (of 6 repos)
+claude-code-action      5 repos
+claude-code (ref)       3 repos
 ```
 
 <details>
@@ -30,9 +37,9 @@ claude-code (ref)       2 repos
 
 | Repo | CLAUDE.md | .claude/ | MCP | Skills | Actions | Hooks | Agents | Memory |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| claude-code |  | ✅ |  | ✅ | ✅ |  |  |  |
-| my-app | ✅ | ✅ |  |  |  |  |  |  |
-| my-infra | ✅ |  |  |  |  |  |  |  |
+| api-service | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |  |
+| frontend-app | ✅ | ✅ |  | ✅ |  |  |  |  |
+| infra-tools | ✅ |  |  |  | ✅ |  |  |  |
 
 </details>
 
